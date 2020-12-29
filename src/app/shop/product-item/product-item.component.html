@@ -1,0 +1,20 @@
+<div class="card shadow-sm h-100">
+  <img
+    src="{{ productItem.pictureUrl }}"
+    alt="{{ productItem.name }}"
+    class="img-fluid"
+  />
+  <div class="card-body d-flex flex-column">
+    <a>
+      <h6>{{ productItem.name }}</h6>
+    </a>
+    <span class="mb-2">{{ productItem.price }} ₾</span>
+
+    <div class="btn-group mt-auto">
+      <button type="button" class="btn btn-success text-white">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+      <button type="button" class="btn btn-outline-secondary">დეტალურად</button>
+    </div>
+  </div>
+</div>

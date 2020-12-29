@@ -1,0 +1,16 @@
+<header>
+  <span *ngIf="totalCount && totalCount > 0"
+    ><strong
+      >{{ (pageNumber - 1) * pageSize + 1 }}
+      -
+      {{
+        pageNumber * pageSize > this.totalCount
+          ? this.totalCount
+          : pageNumber * pageSize
+      }}</strong
+    >
+    ნივთის ჩვენება <strong>{{ this.totalCount }}</strong
+    >შედეგიდან</span
+  >
+  <span *ngIf="totalCount === 0">მოიძებნა <strong>0</strong> ნივთი</span>
+</header>
