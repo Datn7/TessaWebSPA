@@ -4,9 +4,25 @@
   min-width: 25px;
   border-radius: 50%;
   font-size: 1em;
-  background: rgb(255, 111, 159);
+  background: #df95a8;
   color: white;
   text-align: center;
   top: -12px;
   right: 32px;
+}
+
+a {
+  color: #343a40;
+
+  &.active {
+    color: #df95a8;
+  }
+}
+
+.logo {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
