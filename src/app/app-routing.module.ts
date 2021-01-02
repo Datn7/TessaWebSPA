@@ -9,7 +9,7 @@ import { ProductDetailsComponent } from './shop/product-details/product-details.
 import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: { breadcrumb: 'Home' } },
+  { path: '', component: HomeComponent, data: { breadcrumb: 'მთავარი' } },
   {
     path: 'test-error',
     component: TestErrorComponent,
@@ -29,7 +29,19 @@ const routes: Routes = [
     path: 'shop',
     loadChildren: () =>
       import('./shop/shop.module').then((mod) => mod.ShopModule),
-    data: { breadcrumb: 'Shop' },
+    data: { breadcrumb: 'მაღაზია' },
+  },
+  {
+    path: 'basket',
+    loadChildren: () =>
+      import('./basket/basket.module').then((mod) => mod.BasketModule),
+    data: { breadcrumb: 'კალათა' },
+  },
+  {
+    path: 'checkout',
+    loadChildren: () =>
+      import('./checkout/checkout.module').then((mod) => mod.CheckoutModule),
+    data: { breadcrumb: 'გადახდა' },
   },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
