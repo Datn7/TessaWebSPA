@@ -1,0 +1,64 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+  <div class="d-flex justify-content-between align-items-center">
+    <h4>მიტანის მისამართი</h4>
+    <button
+      (click)="saveUserAddress()"
+      [disabled]="
+        !checkoutForm.get('addressForm').valid ||
+        !checkoutForm.get('addressForm').dirty
+      "
+      class="btn btn-outline-success mb-3"
+    >
+      მთავარ მისამართად დაყენება
+    </button>
+  </div>
+  <div class="row" formGroupName="addressForm">
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'სახელი'"
+        formControlName="firstName"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'გვარი'"
+        formControlName="lastName"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'ქუჩა'"
+        formControlName="street"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'ქალაქი'"
+        formControlName="city"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'შტატი'"
+        formControlName="state"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-6">
+      <app-text-input
+        [label]="'ზიპ კოდი'"
+        formControlName="zipcode"
+      ></app-text-input>
+    </div>
+  </div>
+</div>
+
+<div
+  class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5"
+>
+  <button class="btn btn-outline-primary" routerLink="/basket">
+    <i class="fa fa-angle-left"></i> კალათა
+  </button>
+  <button class="btn btn-primary" cdkStepperNext>
+    მიტანის სერვისი <i class="fa fa-angle-right"></i>
+  </button>
+</div>
